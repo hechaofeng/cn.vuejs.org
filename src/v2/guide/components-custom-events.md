@@ -68,7 +68,7 @@ Vue.component('base-checkbox', {
 <base-input v-on:focus.native="onFocus"></base-input>
 ```
 
-在有的时候这是很有用的，不过在你尝试监听一个类似 `<input>` 的非常特定的元素时，这并不是个好主意。比如上述 `<base-input>` 组件可能做了如下重构，所以根元素实际上是一个 `<label>` 元素：
+在有的时候这是很有用的，不过在某些情况下你尝试监听一个类似 `<input>` 元素，比如上面的例子中 `<base-input>` 组件可能做了如下重构，所以根元素实际上是一个 `<label>` 元素：
 
 ```html
 <label>
@@ -160,7 +160,7 @@ this.$emit('update:title', newTitle)
 
 <p class="tip">注意带有 <code>.sync</code> 修饰符的 <code>v-bind</code> <strong>不能</strong>和表达式一起使用 (例如 <code>v-bind:title.sync="doc.title + '!'"</code> 是无效的)。取而代之的是，你只能提供你想要绑定的 property 名，类似 <code>v-model</code>。</p>
 
-当我们用一个对象同时设置多个 prop 的时候，也可以将这个 `.sync` 修饰符和 `v-bind` 配合使用：
+当我们用一个对象同时设置多个 prop 的时候，也可以将这个 `.sync` 修饰符和 `v-bind` 指令配合使用：
 
 ```html
 <text-document v-bind.sync="doc"></text-document>
